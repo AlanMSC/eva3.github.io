@@ -1,0 +1,143 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f3eb; /* Fondo beige claro */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ajuste para envolver elementos en pantallas pequeñas */
+}
+
+.form-container,
+.table-container {
+  width: calc(50% - 10px); /* 50% del ancho del contenedor principal menos el margen entre ellos */
+  margin-bottom: 20px;
+  background-color: #d3c0a6; /* Fondo marrón claro */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .form-container,
+  .table-container {
+    width: 100%; /* En pantallas pequeñas, ocupar todo el ancho disponible */
+  }
+}
+
+/* Estilos para el formulario */
+#book-form {
+  display: grid;
+  gap: 10px;
+}
+
+.form-control {
+  position: relative;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input[type="text"],
+.form-control input[type="number"],
+.form-control input[type="email"],
+.form-control input[type="date"] {
+  width: calc(100% - 10px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-control.success input,
+.form-control.success select,
+.form-control.success label {
+  border-color: #5cb85c; /* Borde verde para campos válidos */
+}
+
+.form-control.error input,
+.form-control.error select,
+.form-control.error label {
+  border-color: #d9534f; /* Borde rojo para campos inválidos */
+}
+
+.form-control small {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  visibility: hidden;
+  background-color: #d9534f; /* Fondo rojo para mensajes de error */
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form-actions {
+  margin-top: 10px;
+}
+
+.form-actions input {
+  margin-right: 10px;
+  padding: 8px 20px;
+  background-color: #4CAF50; /* Fondo verde para botones */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-actions input:hover {
+  background-color: #45a049; /* Color verde más oscuro al pasar el ratón */
+}
+
+/* Estilos para la tabla */
+#book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #fff; /* Fondo blanco para la tabla */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+#book-table th,
+#book-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+#book-table th {
+  background-color: #f2f2f2; /* Fondo gris claro para encabezados */
+}
+
+/* Estilos para mensajes */
+.message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.message.success {
+  background-color: #4CAF50; /* Fondo verde para mensajes de éxito */
+  color: white;
+}
+
+.message.error {
+  background-color: #f44336; /* Fondo rojo para mensajes de error */
+  color: white;
+}
